@@ -1,0 +1,196 @@
+%----------- Resume Starts Here -----------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{fontawesome5}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=blue]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item\small{#1\vspace{-2pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small #3} & \textit{\small #4}
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+  \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small #1} & \textit{\small #2}
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+%---------- HEADING ----------
+
+\begin{center}
+    \textbf{\Huge \scshape Pihu Jain} \\ \vspace{3pt}
+\small
+\faPhone\ \href{tel:+917869693311}{\textcolor{blue}{+91 78696 93311}} \ $|$ \
+\faEnvelope\ \href{mailto:pihujaiinn@gmail.com}{pihujaiinn@gmail.com} \ $|$ \
+\faLinkedin\ \href{https://linkedin.com/in/p1hhuu}{LinkedIn} \ $|$ \
+\faGithub\ \href{https://github.com/Pihujain}{GitHub}
+\end{center}
+
+%----------- EDUCATION -----------
+
+\section{Education}
+
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{VIT Bhopal University}{CGPA: 8.63}
+{Bachelor of Technology in Computer Science and Engineering (Cloud Computing and Automation)}{Aug 2023 -- Present}
+
+\resumeSubheading
+{St. Joseph's Convent Hr. Sec. School, Itarsi}{Class X: 87.6 \% $|$ Class XII: 72.8\%}
+{CBSE}
+
+\resumeSubHeadingListEnd
+\vspace{2pt}
+%----------- TECHNICAL SKILLS -----------
+
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+
+\textbf{Languages:} Python, SQL, Java, JavaScript \\
+
+\textbf{Analytics \& Statistics:} Regression, Time-Series Forecasting, Monte Carlo Simulation, Hypothesis Testing, Optimization, Model Evaluation (RMSE, R\textsuperscript{2}) \\
+
+\textbf{Web:} React.js, Next.js, Node.js, Express.js, REST APIs, PostgreSQL \\
+
+\textbf{Cloud \& Tools:} AWS S3, Git, GitHub, Docker \\
+
+}}
+\end{itemize}
+
+%----------- PROJECTS -----------
+
+\section{Projects}
+
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\textbf{SolarMatch |ML-based Surplus Solar Forecasting} $|$ \emph{Python, scikit-learn, Pandas, NumPy, REST API}}{}
+\resumeItemListStart
+
+\resumeItem{Built a regression model that forecasts a household's next-day surplus rooftop-solar generation, aimed at helping India Energy Stack style peer-to-peer platforms list tradeable surplus power ahead of time.}
+
+\resumeItem{Engineered weather, time-of-day, and rolling-load features on roughly 2 years of hourly solar and consumption data, and used time-series cross-validation so the model was not evaluated on future data.}
+
+\resumeItem{Reached an RMSE of around 0.41 kWh, improving on a naive last-day baseline, and used feature importance to find that irradiance and hour-of-day mattered most.}
+
+\resumeItem{Served the predictions through a small REST API so a client could request the forecast for a given household.}
+
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{ChokeHelm | Autonomous Production Optimisation for an Oil Well} $|$ \emph{Python, NumPy, SciPy, Monte Carlo Simulation}}
+{\href{https://github.com/PihuJain/chokehelm}{\textcolor{blue}{GitHub}}}
+\resumeItemListStart
+
+\resumeItem{Built a controller that decides a well's production setting every hour, balancing output against the operator's target while keeping three pressure readings inside safety limits.}
+
+\resumeItem{Identified a process model from step-test data and layered a steady-state optimiser under a predictive controller, so every candidate decision is checked against backed-off safety limits before being taken.}
+
+\resumeItem{Validated the design against a rate-PID and an override-PI baseline across 120 randomised simulation runs (40 plants $\times$ 3 scenarios): zero constraint violations versus 120 violations for the PID baseline.}
+
+\resumeItem{Quantified model uncertainty from residual statistics, including a Shapiro-Wilk test, and used that to size the safety margin instead of assuming a clean statistical bound.}
+
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{GapstractAI} $|$ \emph{Next.js, TypeScript, PostgreSQL, NextAuth, Google OAuth}}
+{\href{https://github.com/PihuJain/GapstractAI}{\textcolor{blue}{GitHub}}}
+\resumeItemListStart
+
+\resumeItem{Built an AI-assisted research tool that processes uploaded papers and helps surface under-explored areas across a set of documents.}
+
+\resumeItem{Designed REST APIs with role-based authentication and PostgreSQL-backed storage, and handled file uploads through AWS S3.}
+
+\resumeItem{Used the OpenAI API to pull out themes from papers and turn them into short, structured summaries for the user.}
+
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------- EXTRACURRICULAR -----------
+
+\section{Achievements and Certifications}
+
+\resumeSubHeadingListStart
+\resumeItemListStart
+
+\resumeItem{2$\times$ college-level hackathon winner, building and shipping working solutions under time pressure.}
+
+\resumeItem{Selected for the internal round of Smart India Hackathon (SIH) 2024.}
+
+\resumeItem{Technical Content team member, IoT Club, VIT Bhopal.}
+
+\resumeItem{Helped plan college events with the Ekfraseis Dramatics Society, coordinating with teams.}
+
+\resumeItem{Completed AWS Technical Essentials (Amazon Web Services) and MERN Full Stack Certification (Ethnus).}
+
+\resumeItem{Volunteered with orphaned children for a month, teaching basic subjects, organizing activities, and spending evenings mentoring and engaging with them.}
+
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\end{document}
