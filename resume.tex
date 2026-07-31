@@ -110,13 +110,9 @@
 \begin{itemize}[leftmargin=0.15in, label={}]
 \small{\item{
 
-\textbf{Languages:} Python, SQL, Java, JavaScript \\
+\textbf{Languages \& Tools:} Python (pandas, NumPy, scikit-learn), SQL, JavaScript/React, Excel, Tableau, PostgreSQL, Git \\
 
-\textbf{Analytics \& Statistics:} Regression, Time-Series Forecasting, Monte Carlo Simulation, Hypothesis Testing, Optimization, Model Evaluation (RMSE, R\textsuperscript{2}) \\
-
-\textbf{Web:} React.js, Next.js, Node.js, Express.js, REST APIs, PostgreSQL \\
-
-\textbf{Cloud \& Tools:} AWS S3, Git, GitHub, Docker \\
+\textbf{Analytics:} Statistics \& Hypothesis Testing, Regression \& Time-Series Forecasting, Constrained Optimization, Scenario Simulation \& Uncertainty Quantification \\
 
 }}
 \end{itemize}
@@ -131,41 +127,37 @@
 {\textbf{SolarMatch |ML-based Surplus Solar Forecasting} $|$ \emph{Python, scikit-learn, Pandas, NumPy, REST API}}{}
 \resumeItemListStart
 
-\resumeItem{Built a regression model that forecasts a household's next-day surplus rooftop-solar generation, aimed at helping India Energy Stack style peer-to-peer platforms list tradeable surplus power ahead of time.}
+\resumeItem{Forecast a household's next-day surplus rooftop-solar generation for a peer-to-peer energy-trading use case.}
 
-\resumeItem{Engineered weather, time-of-day, and rolling-load features on roughly 2 years of hourly solar and consumption data, and used time-series cross-validation so the model was not evaluated on future data.}
+\resumeItem{Engineered weather, time-of-day, and rolling-load features on roughly 2 years of hourly solar and consumption data from [DATASET NAME], and used time-series cross-validation so the model was not evaluated on future data.}
 
-\resumeItem{Reached an RMSE of around 0.41 kWh, improving on a naive last-day baseline, and used feature importance to find that irradiance and hour-of-day mattered most.}
-
-\resumeItem{Served the predictions through a small REST API so a client could request the forecast for a given household.}
+\resumeItem{Cut RMSE from [BASELINE] kWh (naive last-day baseline) to around 0.41 kWh, and used feature importance to find that irradiance and hour-of-day mattered most.}
 
 \resumeItemListEnd
 
 \resumeProjectHeading
-{\textbf{ChokeHelm | Autonomous Production Optimisation for an Oil Well} $|$ \emph{Python, NumPy, SciPy, Monte Carlo Simulation}}
+{\textbf{ChokeHelm | Constrained Optimisation Under Uncertainty for Oil-Well Production (Simulation)} $|$ \emph{Python, NumPy, SciPy}}
 {\href{https://github.com/PihuJain/chokehelm}{\textcolor{blue}{GitHub}}}
 \resumeItemListStart
 
-\resumeItem{Built a controller that decides a well's production setting every hour, balancing output against the operator's target while keeping three pressure readings inside safety limits.}
+\resumeItem{Built and validated a simulated control system that sets an oil well's production choke hourly, maximising output against an operator target while holding three pressure readings inside hard safety limits: a constrained optimisation problem under model uncertainty.}
 
-\resumeItem{Identified a process model from step-test data and layered a steady-state optimiser under a predictive controller, so every candidate decision is checked against backed-off safety limits before being taken.}
+\resumeItem{Identified the process model from step-test data, then layered a steady-state optimiser beneath a predictive controller that checks every candidate move against the limits before acting.}
 
-\resumeItem{Validated the design against a rate-PID and an override-PI baseline across 120 randomised simulation runs (40 plants $\times$ 3 scenarios): zero constraint violations versus 120 violations for the PID baseline.}
+\resumeItem{Validated across 120 randomised simulation runs: held all constraints, versus 120 violations for a rate-PID baseline, which has no constraint-handling mechanism by design.}
 
-\resumeItem{Quantified model uncertainty from residual statistics, including a Shapiro-Wilk test, and used that to size the safety margin instead of assuming a clean statistical bound.}
+\resumeItem{Sized the safety margin from residual variance, using a Shapiro-Wilk test to justify the normality assumption rather than assuming a clean statistical bound.}
 
 \resumeItemListEnd
 
 \resumeProjectHeading
-{\textbf{GapstractAI} $|$ \emph{Next.js, TypeScript, PostgreSQL, NextAuth, Google OAuth}}
+{\textbf{GapstractAI} $|$ \emph{Remix, TypeScript, tRPC, Prisma, PostgreSQL, OpenAI API}}
 {\href{https://github.com/PihuJain/GapstractAI}{\textcolor{blue}{GitHub}}}
 \resumeItemListStart
 
-\resumeItem{Built an AI-assisted research tool that processes uploaded papers and helps surface under-explored areas across a set of documents.}
+\resumeItem{Built an LLM-assisted literature tool that ingests papers and extracts themes into structured summaries via the OpenAI API, flagging thinly-covered topics across a document set.}
 
-\resumeItem{Designed REST APIs with role-based authentication and PostgreSQL-backed storage, and handled file uploads through AWS S3.}
-
-\resumeItem{Used the OpenAI API to pull out themes from papers and turn them into short, structured summaries for the user.}
+\resumeItem{Focused on prompt design for reliable structured output and schema-consistent parsing.}
 
 \resumeItemListEnd
 
